@@ -85,8 +85,8 @@ any get_avg(const json& value) {
 any get_group(const json& value) {
   if (value.is_string()) {
     return value.get<string>();
-  }else
-    return value.get<int>();
+  }else{
+  return value.get<int>();}
 }
 
 any get_debt(const json& value) {
@@ -94,8 +94,8 @@ any get_debt(const json& value) {
     return nullptr;
   }else if (value.is_string()) {
     return value.get<string>();
-  }else
-    return value.get<vector<string>>();
+  }else{
+  return value.get<vector<string>>();}
 }
 
 string get_string(any value) {
