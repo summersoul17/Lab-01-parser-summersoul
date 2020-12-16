@@ -85,40 +85,33 @@ any get_avg(const json& value) {
 any get_group(const json& value) {
   if (value.is_string()) {
     return value.get<string>();
-  }
-  else
+  }else
     return value.get<int>();
 }
 
 any get_debt(const json& value) {
   if (value.is_null()) {
     return nullptr;
-  }
-  else if (value.is_string()) {
+  }else if (value.is_string()) {
     return value.get<string>();
-  }
-  else
+  }else
     return value.get<vector<string>>();
 }
 
 string get_string(any value) {
   if (value.type() == typeid(nullptr_t)) {
     return "null";
-  }
-  else if (value.type() == typeid(int)) {
+  }else if (value.type() == typeid(int)) {
     stringstream out;
     out << any_cast<int>(value);
     return out.str();
-  }
-  else if (value.type() == typeid(string)) {
+  }else if (value.type() == typeid(string)) {
     return any_cast<string>(value);
-  }
-  else if (value.type() == typeid(double)) {
+  }else if (value.type() == typeid(double)) {
     stringstream out;
     out << any_cast<double>(value);
     return out.str();
-  }
-  else {
+  }else {
     stringstream out;
     out << any_cast<vector<string>>(value).size() << " items";
     return out.str();
