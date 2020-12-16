@@ -11,8 +11,8 @@ vector<Student> Student::ParseFile(string jsonPath) { //(string jsonPath) - пр
 
   ifstream jFile(jsonPath); // вызываем конструктор класса
 
-  if(!jFile.is_open()){
-    cout << "File can not be opened." << endl;
+  if(!jFile){
+    throw std::runtime_error{"File can not be opened."};
   }
 
   json data;
@@ -74,18 +74,11 @@ vector<Student> Student::ParseString(string jsonString){
 }
 
 string get_name(const json& value){
-    if(value.is_null()){
-      return nullptr;
-    }
-    else
       return value.get<string>();
 }
 
 any get_avg(const json& value){
-  if(value.is_null()){
-    return nullptr;
-  }
-  else if(value.is_string()){
+  if(value.is_string()){
     return value.get<string>();
   }
   else if(value.is_number_integer()){
@@ -97,10 +90,7 @@ any get_avg(const json& value){
 }
 
 any get_group(const json& value){
-  if(value.is_null()){
-    return nullptr;
-  }
-  else if(value.is_string()){
+  if(value.is_string()){
     return value.get<string>();
   }
   else
@@ -185,4 +175,3 @@ void Student::Print(const vector<Student>& students, ostream& info) {
     info << right << borderSymbol << endl;
   }
 }
-Student::Student() {}
