@@ -55,7 +55,6 @@ TEST(ParseTest, TableTest){
 }
 
 TEST(ParseTest, ErrorFileOpening){
-
   EXPECT_THROW(Student::ParseFile("file.json"), std::runtime_error);
 }
 
@@ -102,7 +101,7 @@ TEST(ParseTest, ErrorFileCount){
   wrong_file << student;
   wrong_file.close();
 
-  EXPECT_THROW(Student::ParseFile("wrong_file.json"),std::runtime_error);
+  EXPECT_THROW(Student::ParseFile("wrong_file.json"), std::runtime_error);
 }
 
 TEST(ParseTest, ErrorFileArray){

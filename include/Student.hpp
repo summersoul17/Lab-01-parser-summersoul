@@ -1,6 +1,6 @@
 //Copyright 2020 summersoul17 <17summersoul17@gmail.com>
-#ifndef LAB_01_PARSER_STUDENT_HEADER
-#define LAB_01_PARSER_STUDENT_HEADER
+#ifndef INCLUDE_STUDENT_HPP_
+#define INCLUDE_STUDENT_HPP_
 
 #include <string>
 #include <vector>
@@ -28,7 +28,6 @@ using std::stringstream;
 using std::any_cast;
 
 struct Student{
-
   private:
     string name;
     any group;
@@ -37,7 +36,7 @@ struct Student{
 
   public:
     Student(string name_, any group_, any avg_, any debt_)
-      : name(name_), group(group_), avg(avg_), debt(debt_){};
+      : name(name_), group(group_), avg(avg_), debt(debt_){}
     Student();
 
   friend void Print(const vector<Student> &students, ostream &info);
@@ -45,7 +44,5 @@ struct Student{
   static vector<Student> ParseString(string jsonString);
 
   static void Print(const vector<Student> &students, ostream &info);
-
 };
-
-#endif // LAB_01_PARSER_STUDENT_HEADER
+#endif // INCLUDE_STUDENT_HPP_
