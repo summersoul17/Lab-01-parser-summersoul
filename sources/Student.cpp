@@ -1,3 +1,4 @@
+//Copyright 2020 summersoul17 <17summersoul17@gmail.com>
 #include <Student.hpp>
 
 string getString(any value);

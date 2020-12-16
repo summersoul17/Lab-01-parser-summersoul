@@ -1,3 +1,4 @@
+//Copyright 2020 summersoul17 <17summersoul17@gmail.com>
 #ifndef LAB_01_PARSER_STUDENT_HEADER
 #define LAB_01_PARSER_STUDENT_HEADER
 
